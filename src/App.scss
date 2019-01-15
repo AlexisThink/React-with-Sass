@@ -1,0 +1,41 @@
+@mixin centerAll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin styleButton {
+  background: transparent;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+@mixin textButton($n) {
+  color: white;
+  font-size: $n;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main{
+  background: linear-gradient(0deg, #14FFE4 0%, #2E4280 100%);
+  height: 950px;
+
+  @include centerAll;
+
+  &__button{
+    @include centerAll;
+    @include styleButton;
+
+    width: 200px;
+    height: 50px;
+
+    &__text{
+      display: inline-block;
+      margin: 0;
+
+      @include textButton(20px);      
+    }
+  }
+}
